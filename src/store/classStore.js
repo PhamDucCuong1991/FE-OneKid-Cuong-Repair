@@ -21,7 +21,8 @@ export default new Vuex.Store({
     },
     actions: {
         fetchDataClassFromServer({ commit }) {
-           MaClassService.getAllClassCommon()
+          return  MaClassService.getAllClassCommon()
+
                 .then(response => {
                     commit('serverDataClass', response.data);
                     console.log(response.data)
@@ -31,7 +32,7 @@ export default new Vuex.Store({
                 });
         },
         fetchDataClassInGradeFromServer({ commit },idGrade) {
-            MaClassService.getClassInGrade(idGrade)
+          return MaClassService.getClassInGrade(idGrade)
                 .then(response => {
                     commit('serverDataClassInGrade', response.data);
                     console.log(response.data)
@@ -45,6 +46,5 @@ export default new Vuex.Store({
     getters: {
         getServerDataClass: state => state.serverDataClass,
         getServerDataClassInGrade: state => state.serverDataClassInGrade,
-
     }
 });

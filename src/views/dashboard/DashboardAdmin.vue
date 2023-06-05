@@ -13,6 +13,9 @@ export default {
   created() {
     sessionStorage.removeItem("breadcrumbList");
     this.$store.dispatch("layout/setBreadcrumbActions", []);
+    this.$store.dispatch('fetchDataClassInGradeFromServer', []);
+    this.$store.dispatch('fetchDataGradeFromServer', []);
+    this.$store.dispatch('fetchDataClassFromServer', []);
   },
 };
 </script>

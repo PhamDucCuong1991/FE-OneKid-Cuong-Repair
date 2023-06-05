@@ -16,7 +16,7 @@ export default new Vuex.Store({
     },
     actions: {
         fetchDataGradeFromServer({ commit }) {
-            GradeService.getGradeInPrinciple()
+           return GradeService.getGradeInPrinciple()
                 .then(response => {
                     commit('serverDataGrade', response.data);
                     console.log(response.data)

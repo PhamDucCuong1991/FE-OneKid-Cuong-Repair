@@ -219,7 +219,6 @@
 <script>
 import checkPermission from "@/utils/permission.js";
 import AlbumService from "../../services/AlbumService";
-import MaClassService from "../../services/MaClassService";
 import TeacherService from "../../services/TeacherService";
 import {mapActions, mapState} from "vuex";
 // import GradeService from "../../services/GradeService";
@@ -276,10 +275,12 @@ export default {
     },
     ...mapState(['serverDataGrade']),
     ...mapState(['serverDataClass']),
+    ...mapState(['serverDataClassInGrade']),
   },
   methods: {
     ...mapActions(['fetchDataGradeFromServer']),
     ...mapActions(['fetchDataClassFromServer']),
+    ...mapActions(['fetchDataClassInGradeFromServer']),
     checkPermission,
     tableHeaderColor() {
       return "background-color: #78a5e7;color: #fff;font-weight: bold";

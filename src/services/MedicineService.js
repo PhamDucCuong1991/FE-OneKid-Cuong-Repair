@@ -1,7 +1,7 @@
 import http from "../http-common";
 import httpMultipart from "../http-multipart";
 class Medicine {
-    getDetailKidsMethod
+
     getAll() {
         return http.get("/medicine");
     }

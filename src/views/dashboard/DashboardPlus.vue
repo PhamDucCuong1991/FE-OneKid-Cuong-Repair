@@ -251,6 +251,9 @@ export default {
   created() {
     sessionStorage.removeItem("breadcrumbList");
     this.$store.dispatch("layout/setBreadcrumbActions", []);
+    this.$store.dispatch('fetchDataClassInGradeFromServer', []);
+    this.$store.dispatch('fetchDataGradeFromServer', []);
+    this.$store.dispatch('fetchDataClassFromServer', []);
     let appTypeUser = this.$store.state.auth.user.appType;
     // if (appTypeUser == "teacher") {
     //   this.$alert("Tính năng giành cho giáo viên đang được cập nhật", "Thông báo!", {
